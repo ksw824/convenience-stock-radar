@@ -38,4 +38,8 @@ public class Stock {
         }
         this.quantity -= qty;
     }
+
+    public void increase(int qty) {
+        this.quantity += qty;
+    }
 }
