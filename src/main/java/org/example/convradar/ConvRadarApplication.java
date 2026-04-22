@@ -6,7 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableScheduling
 @SpringBootApplication
 public class ConvRadarApplication {
 
@@ -23,7 +25,6 @@ public class ConvRadarApplication {
             System.out.println("데이터 수집 시작...");
             apiService.saveNearbyStores(testLat, testLon);
             simulator.initStock();
-
         };
     }
 
