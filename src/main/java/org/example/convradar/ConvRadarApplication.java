@@ -19,13 +19,15 @@ public class ConvRadarApplication {
         SpringApplication.run(ConvRadarApplication.class, args);
     }
 
-//    데이터 적재 용도 (최초 1번만 실해)
-    @Bean
-    public CommandLineRunner insert(StoreImportService importService) {
-        return args -> {
-            log.info("csv 데이터 적재 시작-----");
-            importService.importGyeonggiData();
-        };
-    }
+/**
+    경기도 내 운영 중인 편의점 데이터 적재 용도 (최초 1번만 실행)
+ */
+//    @Bean
+//    public CommandLineRunner insert(StoreImportService importService) {
+//        return args -> {
+//            log.info("경기도 운영 중인 편의점 csv 데이터 적재 시작-----");
+//            importService.importGyeonggiData();
+//        };
+//    }
 
 }
