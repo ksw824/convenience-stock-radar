@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum ErrorCode {
     DUPLICATE_EMAIL(409, "이미 존재하는 이메일입니다."),
+    ALREADY_HAS_OWNER(409, "이미 주인이 등록된 매장입니다."),
 
     MEMBER_NOT_FOUND(404, "회원을 찾을 수 없습니다."),
 
