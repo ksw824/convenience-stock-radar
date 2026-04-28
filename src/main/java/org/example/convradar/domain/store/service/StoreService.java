@@ -40,4 +40,11 @@ public class StoreService {
                     .build();
         }).collect(Collectors.toList());
     }
+
+    public List<StoreResponseDto> searchStores(String keyword, String city){
+        List<Store> stores = storeRepository.findByStoreNameContainingAndCityNameContaining(keyword, city);
+        return stores.stream()
+                .map(StoreResponseDto::from)
+                .collect(Collectors.toList());
+    }
 }

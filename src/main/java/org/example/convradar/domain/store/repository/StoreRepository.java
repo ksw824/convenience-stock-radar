@@ -21,4 +21,9 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
             "ORDER BY distance", nativeQuery = true)
     List<StoreWithDistance> findNearbyStores(@Param("lat") double lat, @Param("lon") double lon);
 
+    List<Store> findByStoreNameContaining(String storeName);
+
+    // 키워드 (매장 이름, 특정 시/군) 검색
+    List<Store> findByStoreNameContainingAndCityNameContaining(String storeName, String cityName);
+
 }

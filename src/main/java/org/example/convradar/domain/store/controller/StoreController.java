@@ -23,4 +23,11 @@ public class StoreController {
             @RequestParam double lon) {
         return ResponseEntity.ok(storeService.getNearbyInventory(lat, lon));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<StoreResponseDto>> search(
+            @RequestParam String keyword,
+            @RequestParam(required = false, defaultValue = "") String city) {
+        return ResponseEntity.ok(storeService.searchStores(keyword, city));
+    }
 }
