@@ -2,6 +2,8 @@ package org.example.convradar.domain.store.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import org.example.convradar.domain.store.entity.Store;
+
 import java.util.List;
 
 @Getter
@@ -20,5 +22,15 @@ public class StoreResponseDto {
     public static class StockDto {
         private String itemName;
         private Integer quantity;
+    }
+
+    public static StoreResponseDto from(Store store) {
+        return StoreResponseDto.builder()
+                .storeName(store.getStoreName())
+                .address(store.getAddress())
+                .brandName(store.getBrandName())
+                .latitude(store.getLatitude())
+                .longitude(store.getLongitude())
+                .build();
     }
 }
