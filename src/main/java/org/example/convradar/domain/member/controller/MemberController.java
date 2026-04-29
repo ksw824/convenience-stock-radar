@@ -1,6 +1,9 @@
 package org.example.convradar.domain.member.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.example.convradar.domain.member.dto.LoginRequest;
+import org.example.convradar.domain.member.dto.LoginResponse;
 import org.example.convradar.domain.member.dto.MemberJoinRequest;
 import org.example.convradar.domain.member.service.MemberService;
 import org.springframework.http.ResponseEntity;
@@ -18,5 +21,11 @@ public class MemberController {
     @PostMapping("/join")
     public ResponseEntity<Long> join(@RequestBody MemberJoinRequest request) {
         return ResponseEntity.ok(memberService.join(request));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody @Valid LoginRequest request) {
+        LoginResponse response = memberService.login(request);
+        return ResponseEntity.ok(response);
     }
 }
