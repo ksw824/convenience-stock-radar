@@ -10,6 +10,8 @@ public enum ErrorCode {
     ALREADY_HAS_OWNER(409, "이미 주인이 등록된 매장입니다."),
 
     MEMBER_NOT_FOUND(404, "회원을 찾을 수 없습니다."),
+    STORE_NOT_FOUND(404, "매장을 찾을 수 없습니다."),
+    OWNERSHIP_NOT_FOUND(404, "인증된 소유권이 아닙니다."),
 
     INVALID_PASSWORD(400, "비밀번호가 올바르지 않습니다."),
 
